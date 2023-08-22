@@ -28,11 +28,11 @@ This project is a blog API developed using Node.js and Express, with a PostgreSQ
 
 1. **Clone the Repository:** Clone this repository to your local machine.
 
-2. **Install Dependencies:** Navigate to the project folder and run `npm install`.
+2. **Install Dependencies:** Navigate to the project folder and run ```npm install```.
 
 3. **Configure the Database:** Adjust the connection to the PostgreSQL database in the corresponding configuration.
 
-4. **Run the Server:** Start the server with `npm start`.
+4. **Run the Server:** Start the server in dev mode with `npm run dev`.
 
 5. **Explore the API:** Use Postman or other methods to interact with the API.
 
