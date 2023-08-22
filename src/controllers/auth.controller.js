@@ -17,8 +17,9 @@ exports.signUp = catchAsync(async (req, res, next) => {
   const imgRef = ref(storage, `users/${Date.now()}-${req.file.originalname}`);
   const imgUpload = await uploadBytes(imgRef, req.file.buffer);
 
-  const salt = await bcrypt.genSalt(12);
-  const encryptedPass = await bcrypt.hash(password, salt);
+  const salt = await bcrypt.genSalt(12); 
+  const encryptedPass = await bcrypt.hash(password, salt)
+
 
   const user = await User.create({
     name: name.toLowerCase().trim(),
