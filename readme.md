@@ -28,12 +28,22 @@ This project is a blog API developed using Node.js and Express, with a PostgreSQ
 
 1. **Clone the Repository:** Clone this repository to your local machine.
 
-2. **Install Dependencies:** Navigate to the project folder and run ```npm install```.
+2. **Install Dependencies:** Navigate to the project folder and run:
+```
+npm install
+```
 
 3. **Configure the Database:** Adjust the connection to the PostgreSQL database in the corresponding configuration.
 
-4. **Run the Server:** Start the server in dev mode with `npm run dev`.
+4. **Set Up Firebase:** Create a Firebase app and initialize Firestore for image storage.
 
-5. **Explore the API:** Use Postman or other methods to interact with the API.
+5. **Configure Environment Variables:** Clone the `.env.template` file and rename it to `.env`. Fill in the necessary environment variables, including Firebase credentials and PostgreSQL configuration.
+
+6. **Run the Server:** Start the server in dev mode with:
+```
+npm run dev
+```
+
+7. **Explore the API:** Use Postman or other methods to interact with the API.
 
 ---
