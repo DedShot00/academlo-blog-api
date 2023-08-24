@@ -28,7 +28,9 @@ exports.findAllComments = catchAsync(async (req, res, next) => {
 
 exports.createComment = catchAsync(async (req, res, next) => {
   const { id: userId } = req.currentUser;
-  const { text, postId } = req.body;
+  const { text } = req.body;
+  const {postId} = req.params
+
 
   const comment = await Comment.create({
     text,
