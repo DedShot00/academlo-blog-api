@@ -9,8 +9,10 @@ const db = new Sequelize({
   port: +process.env.DB_PORT,
   logging: false,
   dialectOptions: {
-    require: true,
-    rejectUnauthorized: false
+    ssl: {
+      require: true, // Requiere conexión SSL/TLS
+      rejectUnauthorized: false, // Ignora los certificados autofirmados, utiliza un certificado CA válido en producción
+    },
   },
 });
 
