@@ -8,7 +8,11 @@ const db = new Sequelize({
   host: process.env.DB_HOST,
   port: +process.env.DB_PORT,
   logging: false,
-  dialecOptions: {},
+  dialecOptions: {
+    ssl:{
+      require: true
+    }
+  },
 });
 
 module.exports = { db };
