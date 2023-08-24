@@ -17,7 +17,7 @@ const commentRoutes = require('./routes/comment.route');
 
 const app = express();
 const limiter = rateLimit({
-  max: 5,
+  max: 500,
   windowMs: 1000 * 5 * 60,
   message: 'Too many requests, try again in 5 minutes',
 });
@@ -44,7 +44,7 @@ app.use('/api/v1/', limiter);
 //* routes
 app.use('/api/v1/users', userRoutes);
 app.use('/api/v1/auth', authRoutes);
-app.use('/api/v1/post', postRoutes);
+app.use('/api/v1/posts', postRoutes);
 app.use('/api/v1/comment', commentRoutes);
 
 app.all('*', (req, res, next) => {

@@ -1,30 +1,29 @@
-const PostService = require("../services/post.service");
+const PostService = require('../services/post.service');
 
 class Sockets {
   constructor(io) {
     this.io = io;
 
-    this.postService = new PostService()
+    this.postService = new PostService();
 
     this.socketEvents();
   }
 
   socketEvents() {
     this.io.on('connection', (socket) => {
-      socket.on('new-post', async  ({id}) => { 
+      socket.on('new-post', async ({ id }) => {
         try {
-          const post = await this.postService.findPost(id)
+          const post = await this.postService.findPost(id);
 
-          const newPost = await this.postService.downloadPostImgs(post)
+          const newPost = await this.postService.downloadPostImgs(post);
 
-          socket.broadcast.emit('render-new-post',newPost)
+          socket.broadcast.emit('render-new-post', newPost);
         } catch (error) {
-          throw new Error(error)
+          throw new Error(error);
         }
-      })
+      });
     });
   }
 }
 
-
-module.exports = Sockets
+module.exports = Sockets;
